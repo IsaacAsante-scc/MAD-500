@@ -1,4 +1,4 @@
-interface Content{
+export interface Content{
   id: number;
   author: string;
   imagUrl?: string;
