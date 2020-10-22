@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {Content} from '../helper-files/content-interface';
+import {Component, Input, OnInit} from '@angular/core';
+import {Content} from '../app.component';
 
 @Component({
   selector: 'app-content-list',
@@ -8,11 +8,12 @@ import {Content} from '../helper-files/content-interface';
 })
 export class ContentListComponent implements OnInit {
   contentArray: Content[];
+  @Input() item: Content;
   constructor() {
     this.contentArray = [{
      id: 0,
       author: 'ghoul',
-      imagUrl: 'string',
+      imgUrl: 'string',
       type: 'string',
       title: 'string',
       body: 'string',
@@ -20,7 +21,7 @@ export class ContentListComponent implements OnInit {
     }, {
       id: 1,
       author: 'ghoul',
-      imagUrl: 'string',
+      imgUrl: 'string',
       type: 'string',
       title: 'string',
       body: 'string',
@@ -28,7 +29,7 @@ export class ContentListComponent implements OnInit {
     }, {
       id: 2,
       author: 'ghoul',
-      imagUrl: 'string',
+      imgUrl: 'string',
       type: 'string',
       title: 'string',
       body: 'string',
@@ -36,7 +37,7 @@ export class ContentListComponent implements OnInit {
     }, {
       id: 3,
       author: 'ghoul',
-      imagUrl: 'string',
+      imgUrl: 'string',
       type: 'string',
       title: 'string',
       body: 'string',
@@ -44,7 +45,7 @@ export class ContentListComponent implements OnInit {
     }, {
       id: 4,
       author: 'ghoul',
-      imagUrl: 'string',
+      imgUrl: 'string',
       type: 'string',
       title: 'string',
       body: 'string',
@@ -53,6 +54,18 @@ export class ContentListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.contentArray = [{
+      id: 0,
+      author: 'ghoul',
+      imgUrl: 'string',
+      type: 'string',
+      title: 'string',
+      body: 'string',
+      tags: ['string']
+    }];
+
   }
 
 }
+
+

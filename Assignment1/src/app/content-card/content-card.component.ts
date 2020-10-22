@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Content} from '../app.component';
 
 @Component({
   selector: 'app-content-card',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentCardComponent implements OnInit {
 
+  item: Content;
   constructor() { }
 
   ngOnInit(): void {
