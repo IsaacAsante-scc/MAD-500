@@ -1,8 +1,12 @@
-<div class="content-{{ item.id}}">
-  <h1 class="title">Title: {{ item.title}}</h1>
-  <div class="body">Author: {{ item.author}}</div>
-  <div class="body">Description: {{ item.body}}</div>
-  <div class="body">Description: {{ item.body}}</div>
-
+<div>
+  <input #searchTitle placeholder="Please enter the title">
+  <button (click)="searchForTitle(searchTitle.value)">Search</button>
 </div>
+<div>
+  {{searchResult}}
+</div>
+
+<app-content-card *ngFor="let b of (books | typeFilter: 'Fiction'); last as isLast" [book]="b" [class.is-last]="isLast" class="Fiction"></app-content-card>
+
+<app-content-card *ngFor="let b of (books | typeFilter: 'Non-Fiction'); last as isLast" [book]="b" [class.is-last]="isLast" class="Non-Fiction"></app-content-card>
 

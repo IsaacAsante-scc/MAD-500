@@ -2,18 +2,17 @@
   width: 400px;
   display: block;
   margin: 24px auto;
-  border: 1px dashed;
+  border: 2px dashed gray;
 }
 
-.title {
-  font-size: 20px;
-  text-align: center;
+:host.is-last{
+  border: 2px solid black;
 }
 
-.main-image{
-  width: 400px;
+:host.Fiction{
+  border: 4px solid coral;
 }
 
-.special {
-  color: #1976d2;
+:host.Non-Fiction{
+  border: 2px solid indigo;
 }

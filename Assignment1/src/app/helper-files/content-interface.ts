@@ -1,10 +1,10 @@
 export interface Content{
   id: number;
   author: string;
-  imagUrl?: string;
+  imgUrl?: string;
   type?: string;
   title: string;
   body: string;
-  tags?: [string];
+  tags?: string [];
 }
 

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {Content} from '../app.component';
+import {Component, Input, OnInit} from '@angular/core';
+import {Content} from '../helper-files/content-interface';
 
 @Component({
   selector: 'app-content-card',
@@ -7,8 +7,7 @@ import {Content} from '../app.component';
   styleUrls: ['./content-card.component.scss']
 })
 export class ContentCardComponent implements OnInit {
-
-  item: Content;
+  @Input() book: Content;
   constructor() { }
 
   ngOnInit(): void {
