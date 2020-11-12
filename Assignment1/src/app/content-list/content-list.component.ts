@@ -10,6 +10,8 @@ export class ContentListComponent implements OnInit {
   books: Content[];
   searchResult: string;
   @Input() item: Content;
+
+
   constructor() {
     this.books = [];
     this.books = [{
@@ -60,6 +62,7 @@ export class ContentListComponent implements OnInit {
   }
 
   searchForTitle(title: string): void {
+    console.log(this.books);
 
     if (this.books.filter(b => b.title === title).length > 0) {
       this.searchResult = 'Book Was Found';
@@ -68,6 +71,10 @@ export class ContentListComponent implements OnInit {
     this.searchResult = 'Game Not Found';
   }
 
+  addBookToList(newBookFromChild: Content) {
+    this.books.push(newBookFromChild);
+    this.books = Object.assign([], this.books);
+  }
 }
 
 

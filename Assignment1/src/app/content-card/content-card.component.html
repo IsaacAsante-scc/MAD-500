@@ -1,4 +1,4 @@
-<div appHoverStyle class="title">
+<div appHoverStyle changingStyle="textDecoration" class="title">
   {{book.title}}
 </div>
 <div class="author">
@@ -18,6 +18,8 @@
 <div class="body">
   {{book.body}}
 </div>
-<div class="tags">
-  {{ book.tags}}
+<div class="tags" *ngIf="book.tags;">
+  <div appHoverStyle changingStyle="fontWeight" *ngFor="let tag of book.tags">
+  {{tag}}
+  </div>
 </div>
