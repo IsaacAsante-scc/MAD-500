@@ -1,3 +1,6 @@
+<app-create (newBookEvent)="addBookToList($event)"></app-create>
+
+
 <div>
   <input #searchTitle placeholder="Please enter the title">
   <button (click)="searchForTitle(searchTitle.value)">Search</button>

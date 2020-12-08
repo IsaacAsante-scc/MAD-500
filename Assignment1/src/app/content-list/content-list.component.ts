@@ -30,6 +30,10 @@ export class ContentListComponent implements OnInit {
     this.searchResult = 'Game Not Found';
   }
 
+  addBookToList(newBook: Content): void {
+    this.books.push(newBook);
+    this.books = Object.assign([], this.books);
+  }
 }
 
 
