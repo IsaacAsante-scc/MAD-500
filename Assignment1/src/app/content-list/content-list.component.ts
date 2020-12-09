@@ -13,6 +13,7 @@ export class ContentListComponent implements OnInit {
   @Input() item: Content;
   constructor(private contentService: ContentService) {
     this.searchResult = 'No search';
+    this.books = [];
   }
 
   ngOnInit(): void {

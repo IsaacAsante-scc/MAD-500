@@ -1,0 +1,54 @@
+<h1 mat-dialog-title>Add Content</h1>
+<div mat-dialog-content>
+  <div class="bookInput">
+    <div>
+      <mat-form-field>
+        <mat-label>Id</mat-label>
+        <input matInput [(ngModel)]="data.id">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>Author</mat-label>
+        <input matInput [(ngModel)]="data.author">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>Image Url</mat-label>
+        <input matInput [(ngModel)]="data.imgUrl">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>Type</mat-label>
+        <input matInput [(ngModel)]="data.type">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>Title</mat-label>
+        <input matInput [(ngModel)]="data.title">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>Body</mat-label>
+        <input matInput [(ngModel)]="data.body">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>Tags</mat-label>
+        <input matInput [(ngModel)]="data.tags">
+      </mat-form-field>
+    </div>
+  </div>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-stroked-button color="primary" (click)="onNoClick()">No Thanks</button><br>
+  <button mat-stroked-button color="primary" [mat-dialog-close]="data" cdkFocusInitial>Add Book</button>
+</div>
+
+

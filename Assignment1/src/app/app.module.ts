@@ -7,11 +7,17 @@ import { ContentListComponent } from './content-list/content-list.component';
 import { TypeFilterPipe } from './type-filter.pipe';
 import { HoverStyleDirective } from './hover-style.directive';
 import { MessagesComponent } from './messages/messages.component';
-import { CreateComponent } from './create/create.component';
+import {CreateComponent, CreateDialogComponent} from './create/create.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
 import {FormsModule} from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -21,15 +27,23 @@ import {FormsModule} from '@angular/forms';
     TypeFilterPipe,
     HoverStyleDirective,
     MessagesComponent,
-    CreateComponent
+    CreateComponent,
+    CreateDialogComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot( InMemoryDataService, {dataEncapsulation: false, delay: 1000})
+    HttpClientInMemoryWebApiModule.forRoot( InMemoryDataService, {dataEncapsulation: false, delay: 1000}),
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatInputModule,
+    MatChipsModule,
+    MatProgressSpinnerModule,
+    MatDialogModule
   ],
   providers: [],
+  entryComponents: [CreateDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

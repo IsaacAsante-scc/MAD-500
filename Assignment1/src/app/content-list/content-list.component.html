@@ -2,13 +2,15 @@
 
 
 <div>
-  <input #searchTitle placeholder="Please enter the title">
-  <button (click)="searchForTitle(searchTitle.value)">Search</button>
+  <mat-form-field>
+    <input matInput #searchTitle placeholder="Please enter the title">
+  </mat-form-field>
+  <button mat-flat-button color="primary" (click)="searchForTitle(searchTitle.value)">Search</button>
 </div>
 <div>
   {{searchResult}}
 </div>
-
+<mat-spinner *ngIf="books.length == 0"></mat-spinner>
 <app-content-card *ngFor="let b of (books | typeFilter: 'Fiction'); last as isLast" [book]="b" [class.is-last]="isLast" class="Fiction"></app-content-card>
 
 <app-content-card *ngFor="let b of (books | typeFilter: 'Non-Fiction'); last as isLast" [book]="b" [class.is-last]="isLast" class="Non-Fiction"></app-content-card>
