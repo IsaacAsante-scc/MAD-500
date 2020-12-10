@@ -18,6 +18,9 @@ import {MatInputModule} from '@angular/material/input';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatDialogModule} from '@angular/material/dialog';
+import { ContentDetailComponent } from './content-detail/content-detail.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     HoverStyleDirective,
     MessagesComponent,
     CreateComponent,
-    CreateDialogComponent
+    CreateDialogComponent,
+    ContentDetailComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +45,12 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatInputModule,
     MatChipsModule,
     MatProgressSpinnerModule,
-    MatDialogModule
+    MatDialogModule,
+    RouterModule.forRoot([
+      { path: 'content/:id', component: ContentDetailComponent },
+      { path: 'content', component: ContentListComponent },
+      { path: '**', component: NotFoundComponent }
+    ])
   ],
   providers: [],
   entryComponents: [CreateDialogComponent],

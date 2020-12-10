@@ -27,4 +27,8 @@ export class ContentService {
     this.messageService.add('New Content Added ' + book.title);
     return this.http.post<Content>('api/content', book, this.httpOptions);
   }
+
+  getBook(id: number): Observable<Content>{
+    return this.http.get<Content>('api/fred/' + id);
+  }
 }
